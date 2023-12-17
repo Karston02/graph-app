@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import './appStyles.css';
 import axios from 'axios';
-
+import { Menu } from './components';
 function App() {
   const [exchangeNames, setExchangeNames] = useState([]);
 
@@ -8,7 +9,9 @@ function App() {
     try {
       const res = await axios.get(`https://rest.coinapi.io/v1/exchanges?apikey=${process.env.REACT_APP_API_KEY}`);
       const names = res.data.map((item: any) => item.name);
+      console.log(exchangeNames)
       setExchangeNames(names);
+      console.log(exchangeNames)
     } catch (error) {
       console.log(error);
     }
@@ -20,12 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <div>
-        <h2>Exchange Names:</h2>
-        {exchangeNames.map((name, index) => (
-          (index < 100) && (name !== '') && <div key={index}>{index + 1}. {name}</div>
-        ))}
-      </div>
+      <Menu />
     </div>
   );
 }
