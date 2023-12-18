@@ -4,3 +4,9 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* Pushes it from behind sidebar */
+.App {
+    margin-left: 100px;
+    background-color: #5C5470;
+}

@@ -1,5 +1,50 @@
-.header {
-    width: 100%;
-    height: 100vh;
-    background: #000;
+.side-nav {
+    width: 100px;
+    height: 100%;
+    background: #352F44;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 5px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: block;
+    margin-bottom: 10px;
+    background-color: transparent;
+}
+
+.logo-img {
+    width: 80px;
+}
+
+.nav-links {
+    list-style: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav-links li {
+    padding: 8px 10%;
+}
+
+.add-graph {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    cursor:pointer;
+    height: 40px;
+    background: #5C5470;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+.add-graph-btn {
+    border-radius: 3px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.65rem;
 }
