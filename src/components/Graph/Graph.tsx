@@ -1,6 +1,5 @@
 import React from "react";
 import ReactFlow, { MiniMap, Background, Controls } from "reactflow";
-
 import "reactflow/dist/style.css";
 
 const initialNodes = [
@@ -20,6 +19,8 @@ const initialNodes = [
 ];
 const initialEdges = [{ id: "e1-2", source: "1", target: "2" }];
 
+const removeMark = { hideAttribution: true };
+
 interface GraphProps {
   page: number;
 }
@@ -32,8 +33,9 @@ export function Graph({ page }: GraphProps) {
         maxZoom={2.0}
         nodes={initialNodes}
         edges={initialEdges}
+        proOptions={removeMark}
       >
-        <Background size={2} className="bg-transparent" color="#352F44" />
+        <Background size={2} color="#7c7c80" />
         <Controls />
       </ReactFlow>
     </div>
