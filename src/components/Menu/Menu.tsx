@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 import "./menuStyles.css";
 import logo from "../../images/logo.png";
-import { Graph } from "../Graph";
+import { Modal } from "../../components";
 
 export function Menu() {
   const [graphs, setGraphs] = useState<string[]>([]);
+  const [modalActive, setModalActive] = useState<boolean>(false);
 
   const handleGraphSelection = (index: number) => {
     console.log(index);
   };
+
+  const handleModal = (active: boolean) => {
+    setModalActive(true);
+    console.log(modalActive);
+  };
+  const closeModal = () => {
+    setModalActive(false);
+    console.log(modalActive);
+  };
+
   return (
     <div>
       <div className="side-nav">
@@ -29,15 +40,17 @@ export function Menu() {
           <li className="add-graph">
             <button
               className="add-graph-btn"
-              onClick={() =>
-                setGraphs((prevGraphs) => ["New Graph", ...prevGraphs])
-              }
+              onClick={() => {
+                setGraphs((prevGraphs) => ["New Graph", ...prevGraphs]);
+                handleModal(modalActive);
+              }}
             >
               +
             </button>
           </li>
         </ul>
       </div>
+      {modalActive && <Modal onClose={closeModal} />}
     </div>
   );
 }
