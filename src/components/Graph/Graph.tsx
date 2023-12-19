@@ -3,7 +3,7 @@ import ReactFlow, { Background, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 import { CircleNode } from "../CircleNode/CircleNode";
 
-export const nodes = [
+export const tempNodes = [
   {
     type: "circle",
     id: "1",
@@ -30,7 +30,7 @@ export const nodes = [
   },
 ];
 
-export const edges = [
+export const tempEdges = [
   {
     id: "1->2",
     source: "1",
@@ -63,16 +63,16 @@ const nodeTypes = {
 };
 interface GraphProps {
   page: number;
-  nodes2: any;
-  edges2: any;
+  nodes: any;
+  edges: any;
 }
 
-export function Graph({ page, nodes2, edges2 }: GraphProps) {
+export function Graph({ page, nodes, edges }: GraphProps) {
   return (
     <div className="" style={{ height: "100vh", width: "100%" }}>
       <ReactFlow
-        defaultNodes={nodes}
-        defaultEdges={edges}
+        defaultNodes={tempNodes}
+        defaultEdges={tempEdges}
         fitView
         proOptions={removeMark}
         nodesDraggable
