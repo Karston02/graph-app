@@ -12,7 +12,7 @@ export function CircleNode({ data, isConnectable }: CircleNodeProps) {
         width: "2em",
         height: "2em",
         borderRadius: "50%",
-        background: "linear-gradient(45deg, #e069a5, #b85bdd)",
+        background: "radial-gradient(circle at 1em 1em #e069a5, #000)",
         color: "#fff",
         display: "flex",
         alignItems: "center",
