@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./menuStyles.css";
 import logo from "../../images/logo.png";
+import home from "../../images/home-icon.png";
 import { Modal } from "../../components";
 
 export function Menu() {
@@ -27,12 +28,17 @@ export function Menu() {
           <img src={logo} alt="logo" className="logo-img" />
         </a>
         <ul className="nav-links">
-          <li>
-            <button>Home logo</button>
+          <li className="home-icon">
+            <a href="/">
+              <img src={home} alt="home" />
+            </a>
           </li>
           {graphs.map((graph, index) => (
             <li key={index}>
-              <button onClick={() => handleGraphSelection(index)}>
+              <button
+                className="graph"
+                onClick={() => handleGraphSelection(index)}
+              >
                 Graph {index}
               </button>
             </li>
@@ -45,7 +51,7 @@ export function Menu() {
                 handleModal(modalActive);
               }}
             >
-              +
+              &#8330;
             </button>
           </li>
         </ul>
