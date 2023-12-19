@@ -10,10 +10,18 @@ export function Modal({ onClose }: ModalProps) {
         <span className="close-button" onClick={onClose}>
           &times;
         </span>
-        <div className="modal-content">
-          <h2>Enter the cryptocurrency</h2>
-          <input className="coin-input" type="text" placeholder="Ex: BTC" />
-        </div>
+        <form action="">
+          <div className="modal-content">
+            <label>Enter the cryptocurrency</label>
+            <input
+              className="coin-input"
+              type="text"
+              required
+              placeholder="Ex: BTC"
+              autoComplete="on"
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
