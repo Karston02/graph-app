@@ -7,18 +7,29 @@ import { Modal } from "../../components";
 export function Menu() {
   const [graphs, setGraphs] = useState<string[]>([]);
   const [modalActive, setModalActive] = useState<boolean>(false);
+  const [newGraphName, setNewGraphName] = useState<string>("");
 
   const handleGraphSelection = (index: number) => {
     console.log(index);
   };
 
-  const handleModal = (active: boolean) => {
+  const handleModal = () => {
     setModalActive(true);
     console.log(modalActive);
   };
+
   const closeModal = () => {
     setModalActive(false);
     console.log(modalActive);
+  };
+
+  const handleGraphAdd = () => {
+    if (newGraphName.trim() !== "") {
+      // Only add a new graph if the input is not empty
+      setGraphs((prevGraphs) => [newGraphName, ...prevGraphs]);
+      setNewGraphName(""); // Clear the input field
+      closeModal(); // Close the modal after adding a new graph
+    }
   };
 
   return (
@@ -39,24 +50,20 @@ export function Menu() {
                 className="graph"
                 onClick={() => handleGraphSelection(index)}
               >
-                Graph {index}
+                {graph}
               </button>
             </li>
           ))}
-          <li className="add-graph">
-            <button
-              className="add-graph-btn"
-              onClick={() => {
-                setGraphs((prevGraphs) => ["New Graph", ...prevGraphs]);
-                handleModal(modalActive);
-              }}
-            >
-              &#8330;
-            </button>
-          </li>
+          <li className="add-graph" onClick={handleModal}></li>
         </ul>
       </div>
-      {modalActive && <Modal onClose={closeModal} />}
+      {modalActive && (
+        <Modal
+          onClose={closeModal}
+          onInputChange={(value) => setNewGraphName(value)}
+          onAddGraph={handleGraphAdd}
+        />
+      )}
     </div>
   );
 }
