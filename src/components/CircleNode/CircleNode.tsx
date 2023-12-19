@@ -20,7 +20,7 @@ export function CircleNode({ data, isConnectable }: CircleNodeProps) {
     >
       <Handle
         type="target"
-        position={Position.Left}
+        position={Position.Top}
         style={{ background: "#555" }}
         onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
@@ -28,7 +28,7 @@ export function CircleNode({ data, isConnectable }: CircleNodeProps) {
       <div>{data.label}</div>
       <Handle
         type="source"
-        position={Position.Right}
+        position={Position.Bottom}
         id="a"
         isConnectable={isConnectable}
       />
