@@ -78,11 +78,11 @@ const nodeTypes = {
 };
 interface GraphProps {
   page: number;
-  nodes: any;
-  edges: any;
+  nodes2: any;
+  edges2: any;
 }
 
-export function Graph({ page, nodes, edges }: GraphProps) {
+export function Graph({ page, nodes2, edges2 }: GraphProps) {
   return (
     <div className="" style={{ height: "100vh", width: "100%" }}>
       <ReactFlow
