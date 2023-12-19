@@ -47,18 +47,45 @@
 }
 
 .graph:hover {
-    background-color: #5C5470;
+    background: linear-gradient(45deg, #e069a5, #b85bdd);
+    color: #282829;
     cursor: pointer;
 }
 .add-graph {
     display: flex;
     justify-content: center;
+    align-items: center; /* Added alignment */
     width: 40px;
     height: 40px;
     background: linear-gradient(45deg, #e069a5, #b85bdd);
     border-radius: 50%;
     margin: 10px auto;
+    cursor: pointer;
+    position: relative; /* Added position relative */
 }
+
+.add-graph::after,
+.add-graph::before {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #282829;
+}
+
+.add-graph::after {
+    height: 3px;
+    width: 60%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.add-graph::before {
+    width: 3px;
+    height: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+  
 .add-graph-btn {
     border-radius: 3px;
     border: none;
