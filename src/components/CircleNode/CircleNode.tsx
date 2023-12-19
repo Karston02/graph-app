@@ -1,4 +1,5 @@
 import { Handle, Position } from "reactflow";
+import "./circleNodeStyles.css";
 
 interface CircleNodeProps {
   data: any;
@@ -25,7 +26,7 @@ export function CircleNode({ data, isConnectable }: CircleNodeProps) {
         onConnect={(params) => console.log("handle onConnect", params)}
         isConnectable={isConnectable}
       />
-      <div>{data.label}</div>
+      <div className="node-label">{data.label}</div>
       <Handle
         type="source"
         position={Position.Bottom}

@@ -1,18 +1,7 @@
 import React from "react";
-import ReactFlow, {
-  Background,
-  Controls,
-  useNodesState,
-  useEdgesState,
-  addEdge,
-} from "reactflow";
+import ReactFlow, { Background, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 import { CircleNode } from "../CircleNode/CircleNode";
-
-const nodeStyle = {
-  color: "#0041d0",
-  borderColor: "#0041d0",
-};
 
 export const nodes = [
   {
@@ -20,28 +9,24 @@ export const nodes = [
     id: "1",
     data: { label: "BTC" },
     position: { x: 100, y: 0 },
-    style: nodeStyle,
   },
   {
     type: "circle",
     id: "2",
     data: { label: "ETH" },
     position: { x: 0, y: 100 },
-    style: nodeStyle,
   },
   {
     type: "circle",
     id: "3",
     data: { label: "LTC" },
     position: { x: 200, y: 100 },
-    style: nodeStyle,
   },
   {
     type: "circle",
     id: "4",
     data: { label: "BONK" },
     position: { x: 100, y: 200 },
-    style: nodeStyle,
   },
 ];
 
