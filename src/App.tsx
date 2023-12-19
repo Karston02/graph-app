@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <Graph page={1} nodes2={1} edges2={2} />
+      <Graph page={1} nodes={1} edges={2} />
     </div>
   );
 }
