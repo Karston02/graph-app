@@ -14,10 +14,23 @@
 .modal {
     background-color: #353333;
     color: #fff;
-    padding: 20px;
     border-radius: 8px;
     position: relative;
     z-index: 1100; /* Ensure the modal is above the overlay */
+}
+
+.modal label {
+    background: linear-gradient(45deg, #e069a5, #b85bdd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal text {
+    background: linear-gradient(45deg, #e069a5, #b85bdd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .close-button {
@@ -32,6 +45,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    padding: 10px;
 }
 
 .modal-content label {
