@@ -25,8 +25,8 @@ export const tempNodes = [
   {
     type: "circle",
     id: "4",
-    data: { label: "BONK" },
-    position: { x: 100, y: 200 },
+    data: { label: "SOL" },
+    position: { x: 100, y: 125 },
   },
 ];
 
@@ -35,25 +35,19 @@ export const tempEdges = [
     id: "1->2",
     source: "1",
     target: "2",
-    animated: true,
+    animated: false,
   },
   {
     id: "1->3",
     source: "1",
     target: "3",
-    animated: true,
+    animated: false,
   },
   {
-    id: "2->4",
-    source: "2",
+    id: "1->4",
+    source: "1",
     target: "4",
-    animated: true,
-  },
-  {
-    id: "3->4",
-    source: "3",
-    target: "4",
-    animated: true,
+    animated: false,
   },
 ];
 
