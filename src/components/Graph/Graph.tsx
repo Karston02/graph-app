@@ -3,70 +3,26 @@ import ReactFlow, { Background, Controls } from "reactflow";
 import "reactflow/dist/style.css";
 import { CircleNode } from "../CircleNode/CircleNode";
 
-export const tempNodes = [
-  {
-    type: "circle",
-    id: "1",
-    data: { label: "BTC" },
-    position: { x: 100, y: 0 },
-  },
-  {
-    type: "circle",
-    id: "2",
-    data: { label: "ETH" },
-    position: { x: 0, y: 100 },
-  },
-  {
-    type: "circle",
-    id: "3",
-    data: { label: "LTC" },
-    position: { x: 200, y: 100 },
-  },
-  {
-    type: "circle",
-    id: "4",
-    data: { label: "SOL" },
-    position: { x: 100, y: 125 },
-  },
-];
-
-export const tempEdges = [
-  {
-    id: "1->2",
-    source: "1",
-    target: "2",
-    animated: false,
-  },
-  {
-    id: "1->3",
-    source: "1",
-    target: "3",
-    animated: false,
-  },
-  {
-    id: "1->4",
-    source: "1",
-    target: "4",
-    animated: false,
-  },
-];
-
 const removeMark = { hideAttribution: true };
 const nodeTypes = {
   circle: CircleNode,
 };
+
 interface GraphProps {
-  page: number;
-  nodes: any;
-  edges: any;
+  label?: string;
 }
 
-export function Graph({ page, nodes, edges }: GraphProps) {
+export function Graph({ label = "holder" }: GraphProps) {
+  const node = {
+    id: "1",
+    data: { label: label },
+    type: "circle",
+    position: { x: 250, y: 5 },
+  };
   return (
     <div className="" style={{ height: "100vh", width: "100%" }}>
       <ReactFlow
-        defaultNodes={tempNodes}
-        defaultEdges={tempEdges}
+        defaultNodes={[node]}
         fitView
         proOptions={removeMark}
         nodesDraggable

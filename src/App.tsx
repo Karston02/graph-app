@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./appStyles.css";
 import axios from "axios";
-import { Menu, Graph } from "./components";
+import { Menu, Graph, ErrorPage } from "./components";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
   const [exchangeNames, setExchangeNames] = useState([]);
@@ -27,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <Menu />
-      <Graph page={1} nodes={1} edges={2} />
+      <Graph />
     </div>
   );
 }
