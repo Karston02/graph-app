@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./modalStyles.css";
+import { useParams } from "react-router-dom";
 
 interface ModalProps {
   onClose: () => void;
@@ -21,6 +22,7 @@ export function Modal({ onClose, onInputChange, onAddGraph }: ModalProps) {
     onAddGraph(); // Notify the parent component to add a new graph
   };
 
+  let { graphTicker } = useParams<{ graphTicker: string }>();
   return (
     <div className="modal-overlay">
       <div className="modal">
@@ -40,7 +42,9 @@ export function Modal({ onClose, onInputChange, onAddGraph }: ModalProps) {
               onChange={handleInputChange}
             />
           </div>
-          <text className="modal-content">Please hit enter</text>
+          <button className="modal-content" onClick={() => {}}>
+            enter
+          </button>
         </form>
       </div>
     </div>

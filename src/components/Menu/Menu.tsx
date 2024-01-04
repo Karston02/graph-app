@@ -3,6 +3,7 @@ import "./menuStyles.css";
 import logo from "../../images/logo.png";
 import home from "../../images/home-icon.png";
 import { Modal } from "../../components";
+import { useNavigate, useParams } from "react-router-dom";
 
 export function Menu() {
   const [graphs, setGraphs] = useState<string[]>([]);
@@ -26,6 +27,8 @@ export function Menu() {
     }
   };
 
+  let navigate = useNavigate();
+  let { graphTicker } = useParams<{ graphTicker: string }>();
   return (
     <div>
       <div className="side-nav">
@@ -42,7 +45,7 @@ export function Menu() {
             <li key={index}>
               <button
                 className="graph"
-                onClick={() => handleGraphSelection(graph)}
+                onClick={() => navigate(`/graph/${graphTicker}`)}
               >
                 {graph}
               </button>

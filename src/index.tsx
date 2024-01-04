@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ErrorPage, Graph } from "./components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ErrorPage, Graph, Menu } from "./components";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-]);
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Menu />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/graph/:graphTicker" element={<Graph />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
